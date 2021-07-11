@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recall",
+  "info": {
+    "name": "recall"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "is_recall": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "number": {
+      "required": true,
+      "type": "integer"
+    }
+  }
+}

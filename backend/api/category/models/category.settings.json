@@ -2,24 +2,30 @@
   "kind": "collectionType",
   "collectionName": "categories",
   "info": {
-    "name": "category"
+    "name": "category",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "name": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
+    "status": {
+      "type": "boolean",
+      "default": true
     },
-    "products": {
-      "via": "categories",
-      "collection": "product",
+    "sales": {
+      "collection": "sale",
+      "via": "sale",
       "dominant": true
+    },
+    "t_products": {
+      "via": "categories",
+      "collection": "t-product"
     }
   }
 }

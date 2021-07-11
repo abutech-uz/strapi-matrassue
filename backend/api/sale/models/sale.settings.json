@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sale",
+  "info": {
+    "name": "sale"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "sum": {
+      "type": "decimal",
+      "required": true
+    },
+    "sale": {
+      "via": "sales",
+      "collection": "category"
+    }
+  }
+}

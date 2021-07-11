@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produkts",
+  "info": {
+    "name": "Produkt",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "categories": {
+      "collection": "category",
+      "via": "t_products",
+      "dominant": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "is_new": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
